@@ -6,21 +6,16 @@ using UnityEngine.Events;
 public class EnemyHP : MonoBehaviour
 {
     public UnityEvent Die;
-
     public int hp;
     public int maxHP;
     [SerializeField] private Healthbar _healthbar;
-    public Vector3 spawnpostion;
-
     void Start()
     {
         maxHP = 100;
         hp = 100;
-
         _healthbar.UpdateHealthBar(maxHP,hp);
     }
-
-    void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D col, Collider2D other)
     {
         Debug.Log("test");
 
@@ -31,27 +26,13 @@ public class EnemyHP : MonoBehaviour
             {
                 hp = 100;
                 Die.Invoke();
-                transform.position = spawnpostion;
             }
             else if (hp > maxHP)
             {
                 hp = maxHP;
             }
-            Debug.Log(hp);
             _healthbar.UpdateHealthBar(maxHP, hp);
         }
-        else if (other.gameObject.CompareTag("PowerUp"))
-        {
-            hp += 30;
-            if (hp > maxHP)
-            {
-                hp = maxHP;
-            }
-            Debug.Log(hp);
-            Destroy(other.gameObject);
-            _healthbar.UpdateHealthBar(maxHP, hp);
-        }
-
     }
 }
 
