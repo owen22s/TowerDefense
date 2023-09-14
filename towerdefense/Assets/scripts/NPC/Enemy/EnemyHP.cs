@@ -15,7 +15,7 @@ public class EnemyHP : MonoBehaviour
         hp = 100;
         _healthbar.UpdateHealthBar(maxHP,hp);
     }
-        void OnTriggerEnter2D(Collider2D col, Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("test");
 

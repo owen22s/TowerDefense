@@ -9,14 +9,14 @@ public class Health : MonoBehaviour
     public float health;
     public int numOfHearts;
     private bool isHurt;
-    public Text healthText;
+    public TMP_Text healthText;
     [SerializeField] public GameObject gameOverUI;
     public GameObject hurtcanvas;
 
     void Start()  
     {
         health = numOfHearts;
-        healthText = GetComponent<Text>();
+        healthText = GetComponent<TMP_Text>();
 
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -24,7 +24,6 @@ public class Health : MonoBehaviour
         string tag = collision.gameObject.tag.ToLower().Trim();
         switch (tag)
         {
-            case "spikes":
             case "enemy":
                 health--;
                 healthText.text = health.ToString();
@@ -35,7 +34,6 @@ public class Health : MonoBehaviour
                 if (health <= 0)
                 {
                     gameOverUI.SetActive(true);
-                    Debug.Log("ded");
                     Time.timeScale = 0f;
                     
                 }
