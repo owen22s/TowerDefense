@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2211304192337863690}
   - component: {fileID: 5328927732256608484}
   - component: {fileID: 9026909631089650925}
+  - component: {fileID: 2499738470712645159}
+  - component: {fileID: 2050887797178451530}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -101,3 +103,47 @@ MonoBehaviour:
   nextWaypointIndex: 0
   reachedWaypointClearance: 0.25
   path: {fileID: 0}
+--- !u!114 &2499738470712645159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005921675090793280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215fcf205a965434bb6d38f10284f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthbarSprite: {fileID: 0}
+--- !u!114 &2050887797178451530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005921675090793280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9e26e56ed768d41be69f7fe1a5049a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Die:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hp: 20
+  maxHP: 20
+  _healthbar: {fileID: 0}
+  spawnpostion: {x: 0, y: 0, z: 0}
