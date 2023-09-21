@@ -5,17 +5,32 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
 
+    [SerializeField] private float timeBetweenWaves = 15;
+    [SerializeField] private int enemiesPerWave = 8;
+    private int enemiesSpawned = 0;
+
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnWave());
     }
 
-    IEnumerator SpawnEnemy()
+    void Update()
     {
-        while (true)
+
+    }
+
+    IEnumerator SpawnWave()
+    {
+        while (enemiesSpawned < enemiesPerWave)
         {
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1);
+            enemiesSpawned++;
+            Debug.Log("Spawned enemy " + enemiesSpawned);
+            yield return new WaitForSeconds(1f);
         }
+        enemiesSpawned = 0;
+        Debug.Log("Wave complete. Resetting enemiesSpawned.");
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(SpawnWave());
     }
 }
