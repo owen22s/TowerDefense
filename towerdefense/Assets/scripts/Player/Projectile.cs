@@ -22,6 +22,15 @@ public class Projectile : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Destroy_on_hit destroyOnHitScript = other.GetComponent<Destroy_on_hit>();
+
+            if (destroyOnHitScript != null && destroyOnHitScript.EnemyHit)
+            {
+                Playerstats.money++;
+
+                destroyOnHitScript.EnemyHit = false;
+            }
+            Debug.Log("HIT");
             Destroy(gameObject);
             Destroy(other.gameObject);
         }

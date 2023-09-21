@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Destroy_on_hit : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision) 
+    [SerializeField] public bool EnemyHit;
+    public void Start()
     {
-        switch (tag) 
-        {
-            case "castle":
-                Destroy(gameObject);
-                break;
-        }
+        EnemyHit= true;
+    }
+    public void Update()
+    {
+        
     }
 }
