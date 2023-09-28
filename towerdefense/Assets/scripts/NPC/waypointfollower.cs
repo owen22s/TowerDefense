@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class waypointfollower : MonoBehaviour
 {
-    [SerializeField] private float speed = 1;
+    [SerializeField] public float speed = 1;
     [SerializeField] private int nextWaypointIndex = 0;
     [SerializeField] private float reachedWaypointClearance = 0.25f;
     [SerializeField] private path path;
@@ -20,6 +20,12 @@ public class waypointfollower : MonoBehaviour
 
         transform.position = path.waypoints[0].position;
        
+    }
+    void endline()
+    {
+        Playerstats.lives--;
+        EnemySpawner2.onEnemyDestroy.Invoke();
+        Destroy(gameObject);
     }
 
     void Update()
@@ -35,14 +41,9 @@ public class waypointfollower : MonoBehaviour
         }
         if (nextWaypointIndex >= path.waypoints.Length)
         { 
-        endline();
+            endline();
         }
-        void endline()
-        {
-            Playerstats.lives--;
-            Destroy(gameObject);
-
-        }  
+        
     }
 
 }

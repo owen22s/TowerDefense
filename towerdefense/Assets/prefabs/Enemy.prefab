@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7013506113552827837}
   - component: {fileID: 4450866988162668451}
   - component: {fileID: -7211148356074507149}
-  - component: {fileID: 5608847780885479197}
+  - component: {fileID: -2806582450438816781}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e23ec1392c70a4fbb129c9357c9786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHit: 0
 --- !u!61 &4450866988162668451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.07982159, y: -0.017738342}
@@ -152,11 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e53ef59a0fd87408cfbb6a7d1b78b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.2
+  speed: 2.3
   nextWaypointIndex: 0
   reachedWaypointClearance: 0.25
   path: {fileID: 0}
---- !u!50 &5608847780885479197
+--- !u!50 &-2806582450438816781
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -176,4 +177,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

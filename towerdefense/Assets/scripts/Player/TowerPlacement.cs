@@ -7,6 +7,7 @@ public class TowerPlacement : MonoBehaviour
 {
     [SerializeField] private Tower towerPrefab;
     [SerializeField] private TowerSlot[] towerSlots;
+    [SerializeField] public int TowerPrice = 10;
 
     void Update()
     {
@@ -15,10 +16,11 @@ public class TowerPlacement : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-            if (hit.collider != null && Playerstats.money >= 10)
+            if (hit.collider != null && Playerstats.money >= TowerPrice)
             {
                 int towerSlotIndex = Array.IndexOf(towerSlots, hit.collider.GetComponent<TowerSlot>());
-                Playerstats.money -= 10;
+                Playerstats.money -= TowerPrice;
+                TowerPrice *= 2;
                 if (towerSlotIndex != -1)
                 {
                     if (towerSlots[towerSlotIndex].tower != null)

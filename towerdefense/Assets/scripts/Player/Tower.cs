@@ -22,7 +22,7 @@ public class Tower : MonoBehaviour
             return;
         }
 
-        float nearestDistance = 10;
+        float nearestDistance = 2.5f;
         for (int i = 0; i < targets.Length; i++)
         {
             float distance = Vector2.Distance(transform.position, targets[i].transform.position);

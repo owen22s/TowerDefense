@@ -26,11 +26,13 @@ public class Projectile : MonoBehaviour
 
             if (destroyOnHitScript != null && destroyOnHitScript.EnemyHit)
             {
-                Playerstats.money++;
+              Playerstats.money += 2;
 
                 destroyOnHitScript.EnemyHit = false;
             }
             Debug.Log("HIT");
+            EnemySpawner2.onEnemyDestroy.Invoke();
+
             Destroy(gameObject);
             Destroy(other.gameObject);
         }

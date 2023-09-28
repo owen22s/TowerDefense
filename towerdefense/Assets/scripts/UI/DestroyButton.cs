@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine;
+using UnityEngine.UI;
+
 public class DestroyButton : MonoBehaviour
 {
     public Button[] buttonsToDestroy;
 
-    void Start()
+    void Update()
     {
         foreach (Button button in buttonsToDestroy)
         {
@@ -13,9 +16,12 @@ public class DestroyButton : MonoBehaviour
         }
     }
 
-    void DestroyButtonClicked(Button button)
+    void DestroyButtonClicked(Button clickedButton)
     {
-     
-        Destroy(button.gameObject);
+        if (Playerstats.money >= 100)
+        {
+            Debug.Log("test");
+            Destroy(clickedButton.gameObject);
+        }
     }
 }

@@ -28,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("Spawned enemy " + enemiesSpawned);
             yield return new WaitForSeconds(1f);
         }
-        enemiesSpawned = 0;
         Debug.Log("Wave complete. Resetting enemiesSpawned.");
         yield return new WaitForSeconds(timeBetweenWaves);
         StartCoroutine(SpawnWave());
