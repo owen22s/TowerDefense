@@ -21,6 +21,7 @@ public class TowerPlacement : MonoBehaviour
                 int towerSlotIndex = Array.IndexOf(towerSlots, hit.collider.GetComponent<TowerSlot>());
                 Playerstats.money -= TowerPrice;
                 TowerPrice *= 2;
+                TowerPrice -= 10;
                 if (towerSlotIndex != -1)
                 {
                     if (towerSlots[towerSlotIndex].tower != null)
