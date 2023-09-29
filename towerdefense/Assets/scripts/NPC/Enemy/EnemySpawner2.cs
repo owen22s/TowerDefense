@@ -37,7 +37,7 @@ public class EnemySpawner2 : MonoBehaviour
     public void Update()
     {
         if (!IsSpawning) { return; }
-        Debug.Log(enemiesAlive);
+       
         
         timeSinceLastSpawn += Time.deltaTime;
         if(timeSinceLastSpawn > (1.3f / EnemiesPerSecond) && enemiesLeftToSpawn > 0)

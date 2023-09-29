@@ -5,31 +5,25 @@ using UnityEngine.Events;
 
 public class EnemyHP : MonoBehaviour
 {
-    public UnityEvent Die;
     public int hp;
     public int maxHP;
     [SerializeField] private Healthbar _healthbar;
     void Start()
     {
-        maxHP = 100;
-        hp = 100;
         _healthbar.UpdateHealthBar(maxHP,hp);
     }
         void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("test");
-
-        if (other.gameObject.CompareTag("Wapen"))
+        if (other.gameObject.CompareTag("PROJECTTILE"))
         {
-            hp -= 20;
+            Debug.Log(hp);
+            hp -= 30;
             if (hp <= 0)
             {
-                hp = 100;
-                Die.Invoke();
-            }
-            else if (hp > maxHP)
-            {
-                hp = maxHP;
+                Destroy(gameObject);
+                Playerstats.money += 2;
+                EnemySpawner2.onEnemyDestroy.Invoke();
+
             }
             _healthbar.UpdateHealthBar(maxHP, hp);
         }

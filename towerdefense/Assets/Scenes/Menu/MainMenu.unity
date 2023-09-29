@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 895565389}
   - component: {fileID: 895565388}
   m_Layer: 0
-  m_Name: enemy_placeholder (1)
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 1263127880}
   - component: {fileID: 1263127879}
   m_Layer: 0
-  m_Name: enemy_placeholder
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
