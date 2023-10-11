@@ -9040,9 +9040,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefabs:
   - {fileID: 2044650189417382071, guid: 8f79d487fbb028640914b2dc688d6188, type: 3}
+  - {fileID: 5333544592006629455, guid: 2fad0e7e00c2cfc4cbed77dc15329241, type: 3}
   BaseEnemies: 8
-  EnemiesPerSecond: 2
-  timeBetweenWaves: 5
+  EnemiesPerSecond: 4
+  timeBetweenWaves: 2
   difficultyScalingFactor: 0.75
   waveStarter: {fileID: 2067514053}
   currentWave: 1

@@ -13,6 +13,7 @@ public class EnemySpawner2 : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 2f;
     [SerializeField] private float difficultyScalingFactor = 0.50f;
     public WaveStarter waveStarter;
+    public GameObject WinScreen;
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     private float timeSinceLastSpawn;
@@ -20,9 +21,8 @@ public class EnemySpawner2 : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn = 8;
     public bool IsSpawning = false;
-    private float speed;
     public GameObject Boss;
-
+    public bool BossSpawned;
     private void Awake()
     {
         onEnemyDestroy.AddListener(EnemyDestroyed);
@@ -45,6 +45,14 @@ public class EnemySpawner2 : MonoBehaviour
             enemiesAlive++;
             spawnEnemy();
             timeSinceLastSpawn = 0f;
+            if (currentWave == 10 && BossSpawned == false) 
+            {
+                IsSpawning = false;
+                Instantiate(Boss);
+                BossSpawned = true;
+                EndWave();
+                Boss.GetComponent<BossScript>().onBossDestroy.AddListener(BossDestroyed);
+            }
         }
         if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
@@ -67,12 +75,16 @@ public class EnemySpawner2 : MonoBehaviour
     {
         return Mathf.RoundToInt(BaseEnemies * Mathf.Pow(currentWave, difficultyScalingFactor));
     }
+    public void BossDestroyed()
+    {
+        WinScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
     private void EndWave()
     {
         IsSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
-        speed += 0.2f;
         waveStarter.ShowStartWave();
     }
 }
