@@ -1,16 +1,23 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform target;
-    [SerializeField] private float shootInterval = 1;
+    [SerializeField] private float baseShootInterval = 1;
+    private Transform target;
+    public Animator animator;
+    public Sprite Archer_upgrade;
+
+
+    public bool Upgraded { get; private set; }
+
+    private float shootInterval;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        shootInterval = baseShootInterval;
         StartCoroutine(Shoot());
     }
 
@@ -28,6 +35,7 @@ public class Tower : MonoBehaviour
             float distance = Vector2.Distance(transform.position, targets[i].transform.position);
             if (distance < nearestDistance)
             {
+                animator.SetBool("Shooting", true);
                 target = targets[i].transform;
                 nearestDistance = distance;
             }
@@ -46,12 +54,23 @@ public class Tower : MonoBehaviour
     {
         while (true)
         {
-            GameObject projectileGameObject = Instantiate(projectilePrefab);
-            Projectile projectile = projectileGameObject.GetComponent<Projectile>();
-            projectileGameObject.transform.position = transform.position;
-            projectile.target = target;
+            if (target != null)
+            {
+                GameObject projectileGameObject = Instantiate(projectilePrefab);
+                Projectile projectile = projectileGameObject.GetComponent<Projectile>();
+                projectileGameObject.transform.position = transform.position;
+                projectile.target = target;
+            }
+
             yield return new WaitForSeconds(shootInterval);
         }
     }
 
+    public void UpgradeTower()
+    {
+        if (Upgraded) return;
+        Upgraded = true;
+        shootInterval = baseShootInterval / 2;
+        GetComponent<SpriteRenderer>().sprite = Archer_upgrade;
+    }
 }

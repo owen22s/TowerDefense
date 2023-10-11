@@ -21,6 +21,7 @@ public class Playerstats : MonoBehaviour
         if (lives < 1)
         {
             gameOver1.gameoverscreen();
+            
         }
     }
 }

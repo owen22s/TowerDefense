@@ -17,15 +17,15 @@ public class EnemySpawner2 : MonoBehaviour
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     private float timeSinceLastSpawn;
     public int currentWave = 1;
-    private int enemiesAlive; 
+    private int enemiesAlive;
     private int enemiesLeftToSpawn = 8;
     public bool IsSpawning = false;
-    private float speed = 2.3f;
-
+    private float speed;
+    public GameObject Boss;
 
     private void Awake()
     {
-        onEnemyDestroy.AddListener(EnemyDestoryed);
+        onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
     public IEnumerator StartWave()
@@ -37,41 +37,40 @@ public class EnemySpawner2 : MonoBehaviour
     public void Update()
     {
         if (!IsSpawning) { return; }
-       
-        
+
         timeSinceLastSpawn += Time.deltaTime;
-        if(timeSinceLastSpawn > (1.3f / EnemiesPerSecond) && enemiesLeftToSpawn > 0)
+        if (timeSinceLastSpawn > (1.3f / EnemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
             enemiesLeftToSpawn--;
             enemiesAlive++;
             spawnEnemy();
-            timeSinceLastSpawn= 0f;
+            timeSinceLastSpawn = 0f;
         }
-        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0) 
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
             EndWave();
         }
     }
-    
+
     private void spawnEnemy()
     {
-        GameObject prefabToSpawn = EnemyPrefabs[0];
+        int randomIndex = Random.Range(0, EnemyPrefabs.Length);
+        GameObject prefabToSpawn = EnemyPrefabs[randomIndex];
         GameObject instantiatedPrefab = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         waypointfollower waypointFollower = instantiatedPrefab.GetComponent<waypointfollower>();
-        waypointFollower.speed = speed;
-
     }
-    public void EnemyDestoryed() {
-    enemiesAlive--;
+    public void EnemyDestroyed()
+    {
+        enemiesAlive--;
     }
     public int EnemiesPerWave()
     {
         return Mathf.RoundToInt(BaseEnemies * Mathf.Pow(currentWave, difficultyScalingFactor));
     }
-    private void EndWave() 
-    { 
-        IsSpawning= false;
-        timeSinceLastSpawn= 0f;
+    private void EndWave()
+    {
+        IsSpawning = false;
+        timeSinceLastSpawn = 0f;
         currentWave++;
         speed += 0.2f;
         waveStarter.ShowStartWave();
