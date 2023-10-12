@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e53ef59a0fd87408cfbb6a7d1b78b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 3
   nextWaypointIndex: 0
   reachedWaypointClearance: 0.25
   path: {fileID: 0}
@@ -192,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 1243581524525735996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90957e81147fa5844ad2bce51938f048, type: 2}
+  m_Controller: {fileID: 9100000, guid: d138f1bcad847ca41b7357b93ada0eaa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -216,7 +216,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onBossDestroy:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523945661834173131}
+        m_TargetAssemblyTypeName: BossScript, Assembly-CSharp
+        m_MethodName: DestroyBoss
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4172958996678001535
 GameObject:
   m_ObjectHideFlags: 0

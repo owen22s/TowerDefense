@@ -48,10 +48,10 @@ public class EnemySpawner2 : MonoBehaviour
             if (currentWave == 10 && BossSpawned == false) 
             {
                 IsSpawning = false;
-                Instantiate(Boss);
+                GameObject boss = Instantiate(Boss);
                 BossSpawned = true;
                 EndWave();
-                Boss.GetComponent<BossScript>().onBossDestroy.AddListener(BossDestroyed);
+                boss.GetComponent<EnemyHP>().OnDestroy.AddListener(BossDestroyed);
             }
         }
         if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
@@ -77,6 +77,7 @@ public class EnemySpawner2 : MonoBehaviour
     }
     public void BossDestroyed()
     {
+        Debug.Log("DES");
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
     }

@@ -70,7 +70,7 @@ public class Tower : MonoBehaviour
     {
         if (Upgraded) return;
         Upgraded = true;
-        shootInterval = baseShootInterval / 2;
+        shootInterval = baseShootInterval / 1.5f;
         GetComponent<SpriteRenderer>().sprite = Archer_upgrade;
     }
 }

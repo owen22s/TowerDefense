@@ -8,7 +8,9 @@ public class EnemyHP : MonoBehaviour
 {
     public int hp;
     public int maxHP;
-    private Healthbar healthbar; 
+    private Healthbar healthbar;
+    public UnityEvent OnDestroy = new UnityEvent();
+
     void Start()
     {
         healthbar = GetComponent<Healthbar>();
@@ -25,6 +27,7 @@ public class EnemyHP : MonoBehaviour
             healthbar.healthbar.fillAmount = map(hp, 0, maxHP, 0, 1);
             if (hp <= 0)
             {
+                OnDestroy.Invoke();
                 Destroy(gameObject);
                 Playerstats.money += 2;
                 EnemySpawner2.onEnemyDestroy.Invoke();
