@@ -66,6 +66,11 @@ public class EnemySpawner2 : MonoBehaviour
         GameObject prefabToSpawn = EnemyPrefabs[randomIndex];
         GameObject instantiatedPrefab = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         waypointfollower waypointFollower = instantiatedPrefab.GetComponent<waypointfollower>();
+        waypointFollower.OnReachedEnd.AddListener(EnemyDestroyed);
+        EnemyHP enemyHP = instantiatedPrefab.GetComponent<EnemyHP>();
+        enemyHP.OnDestroy.AddListener(EnemyDestroyed);
+
+
     }
     public void EnemyDestroyed()
     {

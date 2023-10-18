@@ -10,8 +10,8 @@ public class waypointfollower : MonoBehaviour
     [SerializeField] private int nextWaypointIndex = 0;
     [SerializeField] private float reachedWaypointClearance = 0.25f;
     [SerializeField] private path path;
-  
 
+    public UnityEvent OnReachedEnd;
 
     void Start()
     {
@@ -23,14 +23,12 @@ public class waypointfollower : MonoBehaviour
     }
     void endline()
     {
-        Playerstats.lives--;
-        EnemySpawner2.onEnemyDestroy.Invoke();
+        OnReachedEnd.Invoke();
         Destroy(gameObject);
     }
 
     void Update()
     {
-        // Changed waypoints[1] to waypoints[nextWaypointIndex]
         transform.position = Vector3.MoveTowards(transform.position, path.waypoints[nextWaypointIndex].position, Time.deltaTime * speed);
 
         if (Vector3.Distance(transform.position, path.waypoints[nextWaypointIndex].position) <= reachedWaypointClearance)

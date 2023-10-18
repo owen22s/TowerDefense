@@ -30,7 +30,6 @@ public class EnemyHP : MonoBehaviour
                 OnDestroy.Invoke();
                 Destroy(gameObject);
                 Playerstats.money += 2;
-                EnemySpawner2.onEnemyDestroy.Invoke();
             }
             
         }
