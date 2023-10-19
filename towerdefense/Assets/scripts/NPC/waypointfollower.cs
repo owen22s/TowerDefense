@@ -23,6 +23,7 @@ public class waypointfollower : MonoBehaviour
     }
     void endline()
     {
+        Playerstats.lives--;
         OnReachedEnd.Invoke();
         Destroy(gameObject);
     }

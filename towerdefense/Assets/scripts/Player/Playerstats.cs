@@ -1,34 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Playerstats : MonoBehaviour
 {
-    public static int money; 
-    public int startmoney;
+    public static int money;
+ 
     public static int lives;
-    public int startlives;
+
     public GameOver gameOver1;
-    public UnityEvent OnLivesChanged = new UnityEvent();
+    public UnityEvent OnLivesChanged;
     void Start()
     {
-        lives = startlives;
-        money = startmoney;
+        lives = 20;
+        money = 100;
+    }
+
+    public void EnemyDied()
+    {
+        money += 2;
     }
 
     public void DecreaseLives()
     {
         lives--;
     }
-    
-        void Update()
+
+    void Update()
     {
-        waypointfollower.OnReachedEnd.AddListener(DecreaseLives);
         if (lives < 1)
         {
             gameOver1.gameoverscreen();
-            
         }
     }
 }

@@ -23,8 +23,11 @@ public class EnemySpawner2 : MonoBehaviour
     public bool IsSpawning = false;
     public GameObject Boss;
     public bool BossSpawned;
+    private Playerstats playerstats;
+    public GameOver gameOver1;
     private void Awake()
     {
+        playerstats = FindObjectOfType<Playerstats>();
         onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
@@ -41,18 +44,24 @@ public class EnemySpawner2 : MonoBehaviour
         timeSinceLastSpawn += Time.deltaTime;
         if (timeSinceLastSpawn > (1.3f / EnemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
-            enemiesLeftToSpawn--;
-            enemiesAlive++;
-            spawnEnemy();
-            timeSinceLastSpawn = 0f;
-            if (currentWave == 10 && BossSpawned == false) 
+            if (currentWave == 10 && BossSpawned == false)
             {
                 IsSpawning = false;
                 GameObject boss = Instantiate(Boss);
                 BossSpawned = true;
                 EndWave();
                 boss.GetComponent<EnemyHP>().OnDestroy.AddListener(BossDestroyed);
+                
+                
             }
+            enemiesLeftToSpawn--;
+            enemiesAlive++;
+            spawnEnemy();
+            timeSinceLastSpawn = 0f;
+        }
+        if(currentWave == 12)
+        {
+            gameOver1.gameoverscreen();
         }
         if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
@@ -68,6 +77,7 @@ public class EnemySpawner2 : MonoBehaviour
         waypointfollower waypointFollower = instantiatedPrefab.GetComponent<waypointfollower>();
         waypointFollower.OnReachedEnd.AddListener(EnemyDestroyed);
         EnemyHP enemyHP = instantiatedPrefab.GetComponent<EnemyHP>();
+        enemyHP.OnDestroy.AddListener(playerstats.EnemyDied);
         enemyHP.OnDestroy.AddListener(EnemyDestroyed);
 
 

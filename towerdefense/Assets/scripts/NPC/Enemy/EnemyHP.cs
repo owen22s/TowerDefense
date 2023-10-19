@@ -9,13 +9,12 @@ public class EnemyHP : MonoBehaviour
     public int hp;
     public int maxHP;
     private Healthbar healthbar;
-    public UnityEvent OnDestroy = new UnityEvent();
+    public UnityEvent OnDestroy;
 
     void Start()
     {
         healthbar = GetComponent<Healthbar>();
-        hp = maxHP; 
-
+        hp = maxHP;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -24,18 +23,16 @@ public class EnemyHP : MonoBehaviour
         {
             Debug.Log(hp);
             hp -= 30;
-            healthbar.healthbar.fillAmount = map(hp, 0, maxHP, 0, 1);
+            healthbar.healthbar.fillAmount = Map(hp, 0, maxHP, 0, 1);
             if (hp <= 0)
             {
                 OnDestroy.Invoke();
                 Destroy(gameObject);
-                Playerstats.money += 2;
             }
-            
         }
     }
 
-    float map(float s, float a1, float a2, float b1, float b2)
+    float Map(float s, float a1, float a2, float b1, float b2)
     {
         return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
     }

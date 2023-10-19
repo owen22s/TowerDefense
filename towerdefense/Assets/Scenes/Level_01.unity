@@ -196,9 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdad8eb3ddb7c74c9a6870ce3f207e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startmoney: 100
-  startlives: 20
   gameOver1: {fileID: 2067514051}
+  OnLivesChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8940932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9528,6 +9529,7 @@ MonoBehaviour:
   IsSpawning: 0
   Boss: {fileID: 1243581524525735996, guid: 45cce12d82e9cc64fa908d3c04e06cd9, type: 3}
   BossSpawned: 0
+  gameOver1: {fileID: 2067514051}
 --- !u!1 &1091228123
 GameObject:
   m_ObjectHideFlags: 0
@@ -13120,7 +13122,6 @@ GameObject:
   - component: {fileID: 2067514049}
   - component: {fileID: 2067514050}
   - component: {fileID: 2067514048}
-  - component: {fileID: 2067514052}
   - component: {fileID: 2067514051}
   - component: {fileID: 2067514053}
   - component: {fileID: 2067514054}
@@ -13198,18 +13199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 61951886}
---- !u!114 &2067514052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067514045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7ee3c5140dca04abbb14fe23e607c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2067514053
 MonoBehaviour:
   m_ObjectHideFlags: 0
