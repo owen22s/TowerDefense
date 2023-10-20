@@ -1,7 +1,7 @@
 # TowerDefense Van Owen
 Mijn TowerDefense game 
 
-![not really my game](https://cdn.akamai.steamstatic.com/steam/apps/246420/ss_aaaf33cdb9106bd0801a36049516d95c6f2352b0.600x338.jpg?t=1686321490)
+![StartScreen](file:///C:/Users/owens/Desktop/ma/bewijzenmap/schooljaar%202/periode%202.1/BO/README_TOWERDEFENSE/Schermafbeelding%202023-10-20%20103242.png)
 
 ![also not](https://cdn.akamai.steamstatic.com/steam/apps/960090/ss_900d7c00d45ff2a258d4c8d59ee47f7f04854c37.600x338.jpg?t=1686097340)
 
