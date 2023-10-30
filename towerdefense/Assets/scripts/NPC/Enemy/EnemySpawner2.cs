@@ -44,7 +44,7 @@ public class EnemySpawner2 : MonoBehaviour
         timeSinceLastSpawn += Time.deltaTime;
         if (timeSinceLastSpawn > (1.3f / EnemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
-            if (currentWave == 10 && BossSpawned == false)
+            if (currentWave == 9 && BossSpawned == false)
             {
                 IsSpawning = false;
                 GameObject boss = Instantiate(Boss);
@@ -59,10 +59,11 @@ public class EnemySpawner2 : MonoBehaviour
             spawnEnemy();
             timeSinceLastSpawn = 0f;
         }
-        if(currentWave == 12)
+        if (currentWave >= 11)
         {
             gameOver1.gameoverscreen();
         }
+
         if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
             EndWave();
@@ -92,7 +93,6 @@ public class EnemySpawner2 : MonoBehaviour
     }
     public void BossDestroyed()
     {
-        Debug.Log("DES");
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
     }

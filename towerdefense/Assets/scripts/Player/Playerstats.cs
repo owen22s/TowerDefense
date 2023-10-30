@@ -15,7 +15,7 @@ public class Playerstats : MonoBehaviour
     void Start()
     {
         lives = 20;
-        money = 100;
+        money = 200;
     }
 
     public void EnemyDied()
