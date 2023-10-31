@@ -14,7 +14,7 @@ Omschrijf hier waarom jij denkt dat je in die scripts aan deze eisen voldoet.
 Bijvoorbeeld:
 
 *"In dit script heb ik een array gebruikt voor al mijn vijanden die in de nieuwe wave worden gespawnd. Hierdoor heb ik mijzelf niet hoeven herhalen **(DRY)** in de code omdat ik met 1 regel alle enemies kan plaatsen via en for each loop.
-[link naar script](/https://github.com/owen22s/TowerDefense/blob/master/towerdefense/Assets/scripts/NPC/Enemy/EnemySpawner2.cs)"*
+[link naar script](/towerdefense/Assets/scripts/NPC/Enemy/EnemySpawner2.cs)"*
 
 ## Product 2: "Projectmappen op GitHub"
 
