@@ -79,7 +79,7 @@ Ik heb een script geschreven dat in staat is om de maximale reikwijdte van de to
 ## Product 8: Prototype test video
 Je hebt een werkend prototype gemaakt om een idee te testen. Omschrijf if je readme wat het idee van de mechanics is geweest wat je wilde testen en laat een korte video van de gameplay test zien. 
 
-[![example test video](https://ucarecdn.com/dbdc3ad0-f375-40ad-8987-9e6451b28b50/)](https://youtu.be/8cQBuaZKKD4?si=QPYTKRL_Te-2XPT4)
+[![example test video](https://nl.wikipedia.org/wiki/Computerspel#/media/Bestand:Nexuiz_screenshot_10.jpg/)](https://youtu.be/8cQBuaZKKD4?si=QPYTKRL_Te-2XPT4)
 
 ## Product 9: SCRUM planning inschatting 
 
