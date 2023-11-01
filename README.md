@@ -52,76 +52,34 @@ Mijn one page
 
 Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
-*  **Je game bevat torens die kunnen mikken en schieten op een bewegend doel.** 
+Je spel omvat torens die in staat zijn om doelgericht te schieten op bewegende doelwitten.
 
-*Mijn torens hebben ook nog een f.o.v waardoor je pas gaan mikken als enemies in de buurt zijn. ook hebben mijn torens geen 360 graden view maar 90 graden waardoor het een extra uitdaging is voor de speler om de torens ook op de meest tactische manier te roteren.*
+Mijn torens richten zich op de vijand die het dichtstbij is, evenals op de eindbaas.
+Je spel biedt de mogelijkheid om vernietigbare vijanden te tegenkomen die één of meerdere routes kunnen volgen.
 
-*  **Je game bevat vernietigbare vijanden die 1 of meerderen paden kunnen volgen.**  
+Mijn spel kent drie typen vijanden: een normale variant met 60 HP die behoorlijk snel is, een variant met een pilaar op het hoofd met 100 HP die wat trager beweegt, en een eindbaas met 1000 HP.
+Je spel maakt gebruik van een golfsysteem waarbij onder specifieke voorwaarden (tijd of aantal vijanden) nieuwe golven van tegenstanders het strijdtoneel betreden.
 
-*Mijn enemies bevatten 3 types: 
-1 snelle die ook snel dood gaat. echter als er veel snelle enemies zijn is de kans steeds groter dat ze bij hun doel komen omdat de torens maar 1 enemy tegelijk kan targetten. Het forceert de speler dus om veel goedkope torens te plaatsen.
-Ook is er een langzame gepantserde enemy. Deze kan eigenlijk alleen maar worden vernietigd door magische torens die zijn geupgrade. goedkope torens doen bijna geen schade. De speler moet dus een balans gaan zoeken tussen veel goedkope torens en upgraden van torens.
-Tot slot is er een vijand die andere enemies healt dit zorgt ervoor dat de speler een extra nadeel heeft en de torens handmatig de deze healer moet laten targetten hierdoor wordt de speler gedwongen om actiever de game te spelen omdat anders geen enkele enemy meer dood gaat.*
+In mijn spel wordt een golfsysteem gehanteerd dat willekeurig één van de twee typen vijanden genereert en vervolgens de aantallen verdubbelt.
+Een gezondheidssysteem is geïmplementeerd waarmee spelers levens kunnen verliezen wanneer tegenstanders hun doel bereiken, wat kan resulteren in het verlies van het spel.
 
-*  **Je game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
+Wanneer mijn vijand het einde van zijn route bereikt, gaat er 1 HP van de gezondheid af.
+Een resourcesysteem stelt spelers in staat om middelen te vergaren waarmee ze torens kunnen aanschaffen en eventueel kunnen upgraden.
 
-*Onderbouwing hier...*
+Ik heb een economisch systeem geïmplementeerd in mijn spel. De aanschafprijs van een toren bedraagt 20 eenheden, maar bij de eerste aanschaf wordt deze verdubbeld naar 40 eenheden. Vervolgens wordt er 10 eenheden van de totale hoeveelheid afgetrokken.
+Een upgradesysteem biedt de mogelijkheid om torens te verbeteren en hun functionaliteit te versterken.
 
-*  **Een “health” systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel kunt verliezen.** 
+Wanneer een toren wordt geüpgraded, neemt zijn vuursnelheid toe tot het dubbele.
+Een voorspellingssysteem voor beweging stelt spelers in staat om de juiste richting te bepalen voor het schieten op bewegende objecten. (Geavanceerd)
 
-*Onderbouwing hier...*
-
-*  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
-
-*Onderbouwing hier...*
-
-*  **Een “upgrade” systeem om je torens te verbeteren.**
-
-*Onderbouwing hier...*
-
-*  **Een “movement prediction” systeem waarmee je kan berekenen waar een toren heen moeten schieten om een bewegend object te kunnen raken. (Moeilijk)**
-
-*Onderbouwing hier...*
-
+Ik heb een script geschreven dat in staat is om de maximale reikwijdte van de toren te bepalen. Indien het doel binnen deze reikwijdte valt, zal de toren aanvallen.
 ## Product 7: Class Diagram voor volledige codebase 
-
-Je brengt je volledige codebase in kaart met behulp van een class diagram. Binnen de classes hoeven geen private members te worden weergegeven. Wel alle public members (fields en methods). Ook geef je indien relevant de relaties tussen je classes weer. Je class diagram plaats je in je readme op github. Evt mag je dit doen m.b.v de [“Mermaid”](https://mermaid.js.org/syntax/classDiagram.html) tool.
-
-
-```mermaid
----
-title: Animal example
----
-classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-
-```
+![](https://github.com/owen22s/TowerDefense/blob/master/readmeVisuals/ClassenDiagram.png)
 
 ## Product 8: Prototype test video
 Je hebt een werkend prototype gemaakt om een idee te testen. Omschrijf if je readme wat het idee van de mechanics is geweest wat je wilde testen en laat een korte video van de gameplay test zien. 
 
-[![example test video](https://ucarecdn.com/dbdc3ad0-f375-40ad-8987-9e6451b28b50/)](https://www.youtube.com/watch?v=CzzRML1swF0)
+[![example test video](https://ucarecdn.com/dbdc3ad0-f375-40ad-8987-9e6451b28b50/)](https://youtu.be/8cQBuaZKKD4?si=QPYTKRL_Te-2XPT4)
 
 ## Product 9: SCRUM planning inschatting 
 
@@ -129,7 +87,7 @@ Je maakt een SCRUM planning en geeft daarbij een inschatting aan elke userstory 
 
 Plaats in de readme een link naar je trello en **zorg ervoor dat je deze openbaar maakt**
 
-[Link naar de openbare trello](https://trello.com/b/w60wkKSU/examen-paraphrenia)
+[Link naar de openbare trello](https://trello.com/b/MkFjlNwU/towerdefence)
 
 ## Product 10: Gitflow conventions
 
