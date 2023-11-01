@@ -11,9 +11,9 @@ Mijn TowerDefense game
 Plaats hier minimaal 1 link naar scripts die voldoen aan de eisen van **"Don't Repeat Yourself (DRY)"** en **"Single Responsibility Principle"**.
 Omschrijf hier waarom jij denkt dat je in die scripts aan deze eisen voldoet.
 
-Bijvoorbeeld:
 
-*"In dit script heb ik een array gebruikt voor al mijn vijanden die in de nieuwe wave worden gespawnd. Hierdoor heb ik mijzelf niet hoeven herhalen **(DRY)** in de code omdat ik met 1 regel alle enemies kan plaatsen via en for each loop.
+In dit script maak ik van mijn enemyprefabs een array waardoor ik 2 verschillende enemies kan spawnen zonder dat ik mezelf herhaal.
+
 [link naar script](/towerdefense/Assets/scripts/NPC/Enemy/EnemySpawner2.cs)"*
 
 ## Product 2: "Projectmappen op GitHub"
@@ -41,14 +41,14 @@ Plaats in je readme een animated gif van je gameplay (+- 10 sec.) waarin de impl
 ## Product 5: Issues met debug screenshots op GitHub 
 
 Zodra je bugs tegenkomt maak je een issue aan op github. In de issue omschrijf je het probleem en je gaat proberen via breakpoints te achterhalen wat het probleem is. Je maakt screenshot(s) van het debuggen op het moment dat je via de debugger console ziet wat er mis is. Deze screenshots met daarbij uitleg over het probleem en de bijhorende oplossing post je in het bijhorende github issue. 
-[Hier de link naar mijn issues](https://github.com/erwinhenraat/TowerDefenseTemplate/issues/)
+[Hier de link naar mijn issues](https://github.com/owen22s/TowerDefense/issues/2)
 
 ## Product 6: Game design met onderbouwing 
 
 Je gebruikt een game design tool om je game design vast te leggen en te communiceren. Daarnaast onderbouw je de design keuzes ten aanzien van “playability” en “replayability” voor je game schriftelijk. 
 
-Voorbeeld van een one page design:
-![](https://external-preview.redd.it/48mnMpA0TbiihGo4HsJiWrJhK72xeTRwV2o70_AKilw.jpg?auto=webp&s=3a1ae18f0e4fba7a465643987cbe9cf409466e53)
+Mijn one page
+![](https://github.com/owen22s/TowerDefense/blob/master/readmeVisuals/OnePage.png)
 
 Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
