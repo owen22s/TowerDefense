@@ -16,6 +16,9 @@ In dit script maak ik van mijn enemyprefabs een array waardoor ik 2 verschillend
 
 [link naar script](/towerdefense/Assets/scripts/NPC/Enemy/EnemySpawner2.cs)"*
 
+SRP script
+[link naar script](/TowerDefense/blob/master/towerdefense/Assets/scripts/NPC/Enemy/EnemyHP.cs)"*
+
 ## Product 2: "Projectmappen op GitHub"
 
 Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
