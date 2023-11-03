@@ -23,7 +23,7 @@ SRP script
 
 Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
 
-Dit is de [ROOT](/https://github.com/owen22s/TowerDefense/tree/master/towerdefense/) folder van mijn unity project.
+Dit is de [ROOT](/towerdefense/) folder van mijn unity project.
 
 Zorg dat deze verwijst naar je Develop branch.
 
