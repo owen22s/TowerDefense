@@ -17,7 +17,7 @@ In dit script maak ik van mijn enemyprefabs een array waardoor ik 2 verschillend
 [link naar script](/towerdefense/Assets/scripts/NPC/Enemy/EnemySpawner2.cs)"*
 
 SRP script
-[link naar script](towerdefense/Assets/scripts/NPC/Enemy/Destroy_on_hit.cs/)"*
+[link naar script](towerdefense/Assets/scripts/NPC/path.cs)"*
 
 ## Product 2: "Projectmappen op GitHub"
 
